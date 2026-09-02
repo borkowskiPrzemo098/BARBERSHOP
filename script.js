@@ -53,35 +53,6 @@
     document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('is-visible'));
   });
 
-  /* ---------- Testimonial slider ---------- */
-  const track = document.getElementById('testiTrack');
-  const prevBtn = document.getElementById('testiPrev');
-  const nextBtn = document.getElementById('testiNext');
-  const currentEl = document.getElementById('testiCurrent');
-  const totalEl = document.getElementById('testiTotal');
-  const slides = track ? track.children.length : 0;
-  let index = 0;
-
-  function pad(n){ return String(n).padStart(2, '0'); }
-
-  function updateSlider(){
-    track.style.transform = `translateX(-${index * 100}%)`;
-    if (currentEl) currentEl.textContent = pad(index + 1);
-  }
-  if (track){
-    if (totalEl) totalEl.textContent = pad(slides);
-    updateSlider();
-
-    nextBtn.addEventListener('click', () => { index = (index + 1) % slides; updateSlider(); });
-    prevBtn.addEventListener('click', () => { index = (index - 1 + slides) % slides; updateSlider(); });
-
-    let autoplay = setInterval(() => { index = (index + 1) % slides; updateSlider(); }, 6000);
-    [prevBtn, nextBtn].forEach(btn => btn.addEventListener('click', () => {
-      clearInterval(autoplay);
-      autoplay = setInterval(() => { index = (index + 1) % slides; updateSlider(); }, 6000);
-    }));
-  }
-
   /* ---------- Booking form (no backend — placeholder confirmation) ---------- */
   const form = document.getElementById('bookingForm');
   const note = document.getElementById('formNote');
