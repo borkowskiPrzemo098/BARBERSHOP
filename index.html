@@ -29,7 +29,7 @@
       <a href="#opinie">Opinie</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-    <a href="#rezerwacja" class="btn btn-ghost header-cta">Zarezerwuj wizytę</a>
+    <a href="#rezerwacja" class="btn btn-solid header-cta">Zarezerwuj wizytę</a>
     <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu">
       <span></span><span></span><span></span>
     </button>
@@ -54,7 +54,6 @@
       <div class="hero-scrim"></div>
     </div>
     <div class="hero-content">
-      <p class="eyebrow reveal">Warszawa &middot; est. 2016</p>
       <h1 class="hero-title">
         <span class="reveal-line"><span class="reveal">Rzemiosło.</span></span>
         <span class="reveal-line"><span class="reveal">Precyzja.</span></span>
@@ -64,8 +63,11 @@
       rzemieślniczej precyzji i dbałości o detal — nie usługą, a rytuałem.</p>
       <div class="hero-actions reveal">
         <a href="#rezerwacja" class="btn btn-solid">Zarezerwuj wizytę</a>
-        <a href="#uslugi" class="btn btn-line">Zobacz cennik</a>
+        <a href="#uslugi" class="btn btn-outline">Zobacz cennik</a>
       </div>
+    </div>
+    <div class="hero-badge reveal-up">
+      <span class="hero-badge-dot"></span> Warszawa &middot; od 2016
     </div>
     <div class="hero-scroll">
       <span></span>
@@ -86,8 +88,7 @@
         </div>
       </div>
       <div class="about-copy">
-        <p class="eyebrow reveal-up">Filozofia</p>
-        <h2 class="section-title reveal-up">Nie strzyżemy włosów.<br>Kształtujemy pewność siebie.</h2>
+        <h2 class="section-title reveal-up"><span class="title-lead">Filozofia.</span> Nie strzyżemy włosów — kształtujemy pewność siebie.</h2>
         <p class="about-text reveal-up">SFM to miejsce stworzone dla mężczyzn, którzy cenią szczegóły.
         Łączymy klasyczne techniki barberskie z nowoczesnym podejściem do stylu — bez pośpiechu,
         bez kompromisów. Każda wizyta zaczyna się od rozmowy, a kończy efektem, który nosi się
@@ -102,11 +103,13 @@
   </section>
 
   <!-- USŁUGI -->
-  <section class="section section-b services" id="uslugi">
+  <section class="section services" id="uslugi">
+    <div class="services-bg">
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2000&auto=format&fit=crop" alt="" loading="lazy">
+    </div>
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow reveal-up">Cennik</p>
-        <h2 class="section-title reveal-up">Usługi &amp; ceny</h2>
+        <h2 class="section-title reveal-up"><span class="title-lead">Cennik.</span> Usługi &amp; ceny</h2>
       </div>
       <div class="services-list">
 
@@ -173,8 +176,7 @@
   <section class="section section-a team" id="zespol">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow reveal-up">Rzemieślnicy</p>
-        <h2 class="section-title reveal-up">Poznaj nasz zespół</h2>
+        <h2 class="section-title reveal-up"><span class="title-lead">Rzemieślnicy.</span> Poznaj nasz zespół</h2>
       </div>
       <div class="team-grid">
 
@@ -226,19 +228,13 @@
   </section>
 
   <!-- OPINIE -->
-  <section class="section testimonials" id="opinie">
+  <section class="section section-b testimonials" id="opinie">
     <div class="container testi-layout">
       <div class="testi-head">
-        <p class="eyebrow reveal-up">Opinie</p>
-        <h2 class="section-title reveal-up">Zaufali nam</h2>
-        <div class="testi-nav reveal-up">
-          <button class="testi-arrow" id="testiPrev" aria-label="Poprzednia opinia">‹</button>
-          <span class="testi-index"><span id="testiCurrent">01</span> / <span id="testiTotal">04</span></span>
-          <button class="testi-arrow" id="testiNext" aria-label="Następna opinia">›</button>
-        </div>
+        <h2 class="section-title reveal-up"><span class="title-lead">Opinie.</span> Zaufali nam</h2>
       </div>
 
-      <div class="testi-body">
+      <div class="testi-card reveal-up">
         <span class="testi-mark" aria-hidden="true">”</span>
         <div class="testi-track" id="testiTrack">
           <figure class="testi-slide">
@@ -274,6 +270,18 @@
             </figcaption>
           </figure>
         </div>
+
+        <div class="testi-footer">
+          <span class="testi-index"><span id="testiCurrent">01</span> / <span id="testiTotal">04</span></span>
+          <div class="testi-nav">
+            <button class="testi-arrow" id="testiPrev" aria-label="Poprzednia opinia">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <button class="testi-arrow" id="testiNext" aria-label="Następna opinia">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -282,8 +290,7 @@
   <section class="section section-a contact" id="kontakt">
     <div class="container contact-grid">
       <div class="contact-info">
-        <p class="eyebrow reveal-up">Odwiedź nas</p>
-        <h2 class="section-title reveal-up" id="rezerwacja">Umów wizytę</h2>
+        <h2 class="section-title reveal-up" id="rezerwacja"><span class="title-lead">Odwiedź nas.</span> Umów wizytę</h2>
         <p class="reveal-up">Zadzwoń, napisz lub wypełnij formularz — odezwiemy się w ciągu
         jednego dnia roboczego, aby potwierdzić termin.</p>
 
