@@ -300,30 +300,33 @@ button{ font-family: inherit; }
     linear-gradient(180deg, var(--bg) 0%, rgba(10,10,10,0.7) 16%, rgba(10,10,10,0.88) 60%, var(--bg) 100%);
 }
 .services .container{ position:relative; z-index:1; }
+
+/* The price list itself is a bright ivory card popping off the dark photo backdrop —
+   this is the thing the section is for, so it gets the light surface, not the section. */
 .services-list{
-  background: rgba(11,10,8,0.55); border: 1px solid var(--line-soft); border-radius: 4px;
-  padding: 10px 40px; backdrop-filter: blur(6px);
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+  background: var(--paper-elev); border: 1px solid rgba(23,21,18,0.08); border-radius: 6px;
+  padding: 10px 44px; color: var(--night);
+  box-shadow: 0 40px 80px -24px rgba(0,0,0,0.7);
 }
 .service-row{
   display:flex; align-items:baseline; gap: 20px; padding: 30px 0;
-  border-bottom: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-on-light);
   transition: transform var(--dur-m) var(--ease-out);
 }
 .service-row:last-child{ border-bottom: none; }
 .service-row:hover{ transform: translateX(14px); }
 .service-name{ flex: 0 0 auto; max-width: 420px; }
 .service-name h3{
-  font-family: var(--font-display); font-weight:500; font-size: 1.35rem; margin:0 0 6px;
+  font-family: var(--font-display); font-weight:500; font-size: 1.35rem; margin:0 0 6px; color: var(--night);
   transition: color var(--dur-s) var(--ease);
 }
-.service-row:hover .service-name h3{ color: var(--gold-bright); }
-.service-name p{ margin:0; color: var(--ink-faint); font-size: 0.9rem; }
+.service-row:hover .service-name h3{ color: var(--gold-deep); }
+.service-name p{ margin:0; color: var(--night-faint); font-size: 0.9rem; }
 .service-dots{
-  flex:1; border-bottom: 1px dotted var(--line); margin-bottom: 8px; min-width: 24px;
+  flex:1; border-bottom: 1px dotted rgba(23,21,18,0.25); margin-bottom: 8px; min-width: 24px;
 }
 .service-price{
-  font-family: var(--font-display); font-size: 1.35rem; color: var(--gold-bright); flex-shrink:0;
+  font-family: var(--font-display); font-size: 1.35rem; color: var(--gold-deep); flex-shrink:0;
 }
 .services-note{ color: var(--ink-dim); font-size: 0.85rem; margin-top: 26px; }
 
