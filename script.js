@@ -7,6 +7,7 @@
   /* ---------- Header scroll state + progress bar ---------- */
   const header = document.getElementById('siteHeader');
   const progressBar = document.getElementById('progressBar');
+  const toTop = document.getElementById('toTop');
   let isScrolled = false;
   let ticking = false;
 
@@ -23,6 +24,8 @@
     const scrollable = h.scrollHeight - h.clientHeight;
     const pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
     progressBar.style.width = pct + '%';
+
+    if (toTop) toTop.classList.toggle('show', y > 700);
     ticking = false;
   }
   // requestAnimationFrame is the ideal throttle for scroll-driven paint work, but it
@@ -39,6 +42,10 @@
   }
   document.addEventListener('scroll', onScroll, { passive: true });
   updateOnScroll();
+
+  if (toTop){
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
 
   /* ---------- Mobile nav ---------- */
   const navToggle = document.getElementById('navToggle');
