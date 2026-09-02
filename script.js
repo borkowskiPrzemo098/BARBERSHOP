@@ -53,17 +53,6 @@
     document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('is-visible'));
   });
 
-  /* ---------- Booking form (no backend — placeholder confirmation) ---------- */
-  const form = document.getElementById('bookingForm');
-  const note = document.getElementById('formNote');
-  if (form){
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      note.textContent = 'Dziękujemy! Zgłoszenie zostało zarejestrowane — skontaktujemy się wkrótce, aby potwierdzić termin.';
-      form.reset();
-    });
-  }
-
   /* ---------- Smooth-scroll for in-page anchors (accounts for fixed header) ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
