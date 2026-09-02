@@ -3,22 +3,30 @@
    Design tokens
    ============================================================ */
 :root{
-  --bg: #0b0a08;
-  --bg-a: #16120d;
-  --bg-b: #1b1310;
-  --bg-elev: #211a15;
-  --bg-elev-2: #2a221b;
-  --ink: #f3ede1;
-  --ink-dim: #b9b0a0;
-  --ink-faint: #7c7568;
+  /* Dark surfaces (near-black, not warm brown) */
+  --bg: #0a0a0a;
+  --bg-elev: #161616;
+  --bg-elev-2: #202020;
+  --ink: #f5f2ec;
+  --ink-dim: #b9b4a9;
+  --ink-faint: #7d7970;
+
+  /* Light surfaces (ivory, not stark white) */
+  --paper: #f3efe4;
+  --paper-elev: #fbf9f3;
+  --night: #171512;
+  --night-dim: #5c574c;
+  --night-faint: #8f897c;
+
+  /* One accent family: gold, tuned per surface for contrast */
   --gold: #c9a25a;
   --gold-bright: #e3c17f;
   --gold-dim: #8a7143;
-  --copper-1: #4a3018;
-  --copper-2: #1c1108;
-  --band-line: rgba(227,193,127,0.24);
-  --line: rgba(201,162,90,0.18);
-  --line-soft: rgba(243,237,225,0.09);
+  --gold-deep: #93701f;
+
+  --line: rgba(227,201,140,0.2);
+  --line-soft: rgba(245,242,236,0.09);
+  --line-on-light: rgba(23,21,18,0.14);
 
   --font-display: "Libre Caslon Display", Georgia, serif;
   --font-body: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -236,13 +244,16 @@ button{ font-family: inherit; }
   content:""; position:absolute; top:-1px; left:0; right:0; height:1px;
   background: linear-gradient(90deg, transparent, var(--line) 50%, transparent);
 }
-.section-a{ background: var(--bg-a); }
-.section-b{ background: var(--bg-b); }
-.band-copper{
-  background: radial-gradient(130% 170% at 50% -25%, var(--copper-1) 0%, var(--copper-2) 60%);
-  border-top-color: var(--band-line);
+/* Light sections (ivory) — deliberate black/white rhythm, gold stays the only accent */
+.section-light{
+  background: var(--paper); color: var(--night);
+  border-top-color: var(--line-on-light);
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.05), inset 0 40px 60px -55px rgba(0,0,0,0.15);
 }
-.band-copper::before{ background: linear-gradient(90deg, transparent, var(--band-line) 50%, transparent); }
+.section-light::before{ background: linear-gradient(90deg, transparent, rgba(147,112,31,0.35) 50%, transparent); }
+.section-light .section-title{ color: var(--night); }
+.section-light .title-lead{ color: var(--gold-deep); }
+
 .section-head{ margin-bottom: 60px; max-width: 640px; }
 .section-head.center{ max-width: none; text-align:center; margin-left:auto; margin-right:auto; }
 .section-head.center .section-title{ margin: 0 auto; }
@@ -261,32 +272,32 @@ button{ font-family: inherit; }
 .about-media-frame img{ width:100%; height:100%; object-fit:cover; transition: transform 1.4s var(--ease-out); }
 .about-media:hover .about-media-frame img{ transform: scale(1.06); }
 .about-media-badge{
-  position:absolute; bottom: 28px; left:-1px; background: var(--bg-a);
-  color: var(--ink); border: 1px solid var(--line);
+  position:absolute; bottom: 28px; left:-1px; background: var(--bg);
+  color: var(--ink); border: 1px solid rgba(245,242,236,0.12);
   padding: 18px 26px; display:flex; align-items:baseline; gap: 12px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
 }
 .about-media-badge .num{ font-family: var(--font-display); font-size: 1.9rem; line-height:1; color: var(--gold-bright); }
 .about-media-badge .label{ font-size: 0.72rem; letter-spacing:0.04em; text-transform:uppercase; color: var(--ink-dim); }
-.about-text{ color: var(--ink-dim); font-size: 1.03rem; margin: 24px 0 34px; max-width: 52ch; }
+.about-text{ color: var(--night-dim); font-size: 1.03rem; margin: 24px 0 34px; max-width: 52ch; }
 .about-list{ display:flex; flex-direction:column; gap: 20px; }
 .about-list li{
-  display:flex; gap:18px; align-items:flex-start; padding-top:20px; border-top:1px solid var(--line-soft);
-  font-size: 0.96rem; color: var(--ink-dim);
+  display:flex; gap:18px; align-items:flex-start; padding-top:20px; border-top:1px solid var(--line-on-light);
+  font-size: 0.96rem; color: var(--night-dim);
 }
-.about-list .idx{ font-family: var(--font-display); font-style:italic; color: var(--gold); font-size: 0.95rem; flex-shrink:0; }
+.about-list .idx{ font-family: var(--font-display); font-style:italic; color: var(--gold-deep); font-size: 0.95rem; flex-shrink:0; }
 
 /* Services */
-.services{ background: var(--bg-b); }
+.services{ background: var(--bg); }
 .services-bg{ position:absolute; inset:0; overflow:hidden; }
 .services-bg img{
-  width:100%; height:100%; object-fit:cover; opacity: 0.22;
-  filter: grayscale(40%) contrast(1.05);
+  width:100%; height:100%; object-fit:cover; opacity: 0.24;
+  filter: grayscale(45%) contrast(1.05);
 }
 .services-bg::after{
   content:""; position:absolute; inset:0;
   background:
-    linear-gradient(180deg, var(--bg-b) 0%, rgba(27,19,16,0.75) 16%, rgba(27,19,16,0.9) 60%, var(--bg-b) 100%);
+    linear-gradient(180deg, var(--bg) 0%, rgba(10,10,10,0.7) 16%, rgba(10,10,10,0.88) 60%, var(--bg) 100%);
 }
 .services .container{ position:relative; z-index:1; }
 .services-list{
@@ -331,7 +342,7 @@ button{ font-family: inherit; }
 .team-photo img{ width:100%; height:100%; object-fit:cover; filter: grayscale(65%) contrast(1.05); transition: filter var(--dur-m) var(--ease), transform 1.2s var(--ease-out); }
 .team-card:hover .team-photo img{ filter: grayscale(0%) contrast(1.05); transform: scale(1.05); }
 .team-card h3{ font-family: var(--font-display); font-weight:500; font-size: 1.15rem; margin: 0 0 4px; }
-.team-card p{ margin:0; color: var(--gold); font-size: 0.82rem; letter-spacing:0.03em; }
+.team-card p{ margin:0; color: var(--gold-deep); font-size: 0.82rem; letter-spacing:0.03em; font-weight:600; }
 
 /* Gallery */
 .gallery{ padding: 0; }
@@ -344,16 +355,13 @@ button{ font-family: inherit; }
 .gallery-item img{ width:100%; height:100%; object-fit:cover; transition: transform 1.2s var(--ease-out); }
 .gallery-item:hover img{ transform: scale(1.06); }
 
-/* Testimonials */
-.testimonials .section-title{ color: #fbf3e4; }
-.testimonials .title-lead{ color: var(--gold-bright); }
-
+/* Testimonials — dark section, cards float with real elevation */
 .reviews-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 .review-card{
-  background: linear-gradient(165deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015));
-  border: 1px solid var(--band-line); border-radius: 6px;
-  padding: 36px 32px; backdrop-filter: blur(2px);
-  box-shadow: 0 24px 50px -24px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05);
+  background: linear-gradient(165deg, var(--bg-elev), var(--bg-elev-2));
+  border: 1px solid var(--line); border-radius: 6px;
+  padding: 36px 32px;
+  box-shadow: 0 24px 50px -24px rgba(0,0,0,0.75), inset 0 1px 0 rgba(255,255,255,0.04);
   transition: transform var(--dur-m) var(--ease-out), border-color var(--dur-s) var(--ease);
 }
 .review-card:hover{ transform: translateY(-6px); border-color: var(--gold-dim); }
@@ -361,35 +369,35 @@ button{ font-family: inherit; }
 .review-stars svg{ width:16px; height:16px; fill: var(--gold-bright); }
 .review-quote{
   font-family: var(--font-display); font-size: 1.14rem; line-height: 1.5;
-  color: #f3e6d4; margin: 0 0 26px;
+  color: var(--ink); margin: 0 0 26px;
 }
 .review-author{ font-size: 0.9rem; font-weight:600; color: var(--gold-bright); }
-.review-author span{ display:block; font-weight:400; color: rgba(243,237,225,0.55); font-size: 0.8rem; margin-top: 3px; }
+.review-author span{ display:block; font-weight:400; color: var(--ink-faint); font-size: 0.8rem; margin-top: 3px; }
 
 /* Contact */
 .contact-grid{ display:grid; grid-template-columns: 0.9fr 1.1fr; gap: 90px; }
-.contact-info p{ color: var(--ink-dim); }
+.contact-info p{ color: var(--night-dim); }
 .info-block{ margin-top: 34px; }
 .info-block h4{
-  font-size: 0.72rem; letter-spacing:0.14em; text-transform:uppercase; color: var(--gold);
+  font-size: 0.72rem; letter-spacing:0.14em; text-transform:uppercase; color: var(--gold-deep);
   margin: 0 0 10px; font-weight:600;
 }
-.info-block p{ margin:0; color: var(--ink); }
-.info-block a:hover{ color: var(--gold-bright); }
+.info-block p{ margin:0; color: var(--night); }
+.info-block a:hover{ color: var(--gold-deep); }
 .hours{ display:flex; flex-direction:column; gap:8px; }
-.hours li{ display:flex; justify-content:space-between; max-width: 320px; color: var(--ink); font-size: 0.94rem; }
-.hours li span:last-child{ color: var(--ink-faint); }
+.hours li{ display:flex; justify-content:space-between; max-width: 320px; color: var(--night); font-size: 0.94rem; }
+.hours li span:last-child{ color: var(--night-faint); }
 .social-row{ display:flex; gap: 22px; margin-top: 34px; }
-.social-row a{ font-size: 0.85rem; color: var(--ink-dim); border-bottom: 1px solid transparent; transition: all var(--dur-s) var(--ease); }
-.social-row a:hover{ color: var(--gold-bright); border-color: var(--gold-dim); }
+.social-row a{ font-size: 0.85rem; color: var(--night-dim); border-bottom: 1px solid transparent; transition: all var(--dur-s) var(--ease); }
+.social-row a:hover{ color: var(--gold-deep); border-color: var(--gold-dim); }
 
 .map-card{
-  position:relative; border: 1px solid var(--line-soft); border-radius: 4px; overflow:hidden;
-  box-shadow: 0 30px 60px -24px rgba(0,0,0,0.6); min-height: 340px;
+  position:relative; border: 1px solid var(--line-on-light); border-radius: 4px; overflow:hidden;
+  box-shadow: 0 30px 60px -24px rgba(0,0,0,0.25); min-height: 340px;
 }
 .map-card iframe{
   width:100%; height:100%; min-height: 340px; border:0; display:block;
-  filter: grayscale(45%) invert(92%) contrast(90%);
+  filter: grayscale(30%) contrast(1.02);
 }
 
 /* Booking CTA (Booksy) */
