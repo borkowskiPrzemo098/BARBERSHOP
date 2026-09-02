@@ -7,16 +7,38 @@
   /* ---------- Header scroll state + progress bar ---------- */
   const header = document.getElementById('siteHeader');
   const progressBar = document.getElementById('progressBar');
+  let isScrolled = false;
+  let ticking = false;
 
-  function onScroll(){
-    header.classList.toggle('scrolled', window.scrollY > 40);
+  function updateOnScroll(){
+    const y = window.scrollY;
+    // Hysteresis (different on/off thresholds) stops the header from
+    // flipping .scrolled on and off repeatedly during iOS/Android
+    // rubber-band bounce near the boundary — that flicker is what reads
+    // as the page "jumping" while scrolling.
+    if (!isScrolled && y > 60){ isScrolled = true; header.classList.add('scrolled'); }
+    else if (isScrolled && y < 24){ isScrolled = false; header.classList.remove('scrolled'); }
+
     const h = document.documentElement;
     const scrollable = h.scrollHeight - h.clientHeight;
     const pct = scrollable > 0 ? (h.scrollTop / scrollable) * 100 : 0;
     progressBar.style.width = pct + '%';
+    ticking = false;
+  }
+  // requestAnimationFrame is the ideal throttle for scroll-driven paint work, but it
+  // only fires on a visible, foregrounded tab — fall back to a plain timeout so this
+  // still runs (e.g. in an embedded/backgrounded preview, or a low-power scenario).
+  const raf = (typeof requestAnimationFrame === 'function')
+    ? requestAnimationFrame
+    : (fn) => setTimeout(fn, 16);
+  function onScroll(){
+    if (!ticking){
+      raf(updateOnScroll);
+      ticking = true;
+    }
   }
   document.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  updateOnScroll();
 
   /* ---------- Mobile nav ---------- */
   const navToggle = document.getElementById('navToggle');
