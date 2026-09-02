@@ -88,13 +88,17 @@ button{ font-family: inherit; }
 .site-header{
   position: fixed; top:0; left:0; right:0; z-index: 500;
   padding: 20px 0;
-  background: linear-gradient(180deg, rgba(8,7,6,0.75) 0%, rgba(8,7,6,0.35) 70%, transparent 100%);
-  backdrop-filter: blur(6px);
-  transition: background var(--dur-m) var(--ease), border-color var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease);
+  /* Same gradient shape (3 stops, same positions) in both states, only the color
+     changes — that's what lets the browser interpolate this smoothly. A gradient
+     transitioning to a flat color can't be animated cleanly and just snaps partway
+     through, which over a busy hero photo reads as the whole section "jumping". */
+  background: linear-gradient(180deg, rgba(8,7,6,0.75) 0%, rgba(8,7,6,0.35) 70%, rgba(8,7,6,0) 100%);
+  backdrop-filter: blur(6px) saturate(100%);
+  transition: background var(--dur-m) var(--ease), backdrop-filter var(--dur-m) var(--ease), border-color var(--dur-s) var(--ease), box-shadow var(--dur-s) var(--ease);
   border-bottom: 1px solid transparent;
 }
 .site-header.scrolled{
-  background: rgba(11,10,8,0.94);
+  background: linear-gradient(180deg, rgba(11,10,8,0.94) 0%, rgba(11,10,8,0.94) 70%, rgba(11,10,8,0.94) 100%);
   backdrop-filter: blur(16px) saturate(140%);
   border-bottom: 1px solid var(--line-soft);
   box-shadow: 0 12px 34px rgba(0,0,0,0.35);
