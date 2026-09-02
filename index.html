@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✂️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -73,22 +73,8 @@
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee">
-    <div class="marquee-track">
-      <span>Strzyżenie klasyczne</span><span>&middot;</span>
-      <span>Golenie brzytwą</span><span>&middot;</span>
-      <span>Stylizacja brody</span><span>&middot;</span>
-      <span>Zabiegi pielęgnacyjne</span><span>&middot;</span>
-      <span>Strzyżenie klasyczne</span><span>&middot;</span>
-      <span>Golenie brzytwą</span><span>&middot;</span>
-      <span>Stylizacja brody</span><span>&middot;</span>
-      <span>Zabiegi pielęgnacyjne</span><span>&middot;</span>
-    </div>
-  </div>
-
   <!-- O NAS -->
-  <section class="section about" id="onas">
+  <section class="section section-a about" id="onas">
     <div class="container about-grid">
       <div class="about-media">
         <div class="about-media-frame reveal-up">
@@ -96,7 +82,7 @@
         </div>
         <div class="about-media-badge reveal-up">
           <span class="num">8+</span>
-          <span class="label">lat<br>doświadczenia</span>
+          <span class="label">lat doświadczenia</span>
         </div>
       </div>
       <div class="about-copy">
@@ -116,7 +102,7 @@
   </section>
 
   <!-- USŁUGI -->
-  <section class="section services" id="uslugi">
+  <section class="section section-b services" id="uslugi">
     <div class="container">
       <div class="section-head">
         <p class="eyebrow reveal-up">Cennik</p>
@@ -184,7 +170,7 @@
   </section>
 
   <!-- ZESPÓŁ -->
-  <section class="section team" id="zespol">
+  <section class="section section-a team" id="zespol">
     <div class="container">
       <div class="section-head">
         <p class="eyebrow reveal-up">Rzemieślnicy</p>
@@ -229,7 +215,7 @@
   </section>
 
   <!-- GALERIA -->
-  <section class="section gallery" id="galeria">
+  <section class="section section-b gallery" id="galeria">
     <div class="gallery-track">
       <div class="gallery-item"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200&auto=format&fit=crop" alt="Wnętrze salonu" loading="lazy"></div>
       <div class="gallery-item"><img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?q=80&w=1200&auto=format&fit=crop" alt="Narzędzia barberskie" loading="lazy"></div>
@@ -241,44 +227,59 @@
 
   <!-- OPINIE -->
   <section class="section testimonials" id="opinie">
-    <div class="container">
-      <div class="section-head">
+    <div class="container testi-layout">
+      <div class="testi-head">
         <p class="eyebrow reveal-up">Opinie</p>
         <h2 class="section-title reveal-up">Zaufali nam</h2>
-      </div>
-      <div class="testi-slider">
-        <div class="testi-track" id="testiTrack">
-          <blockquote class="testi-card">
-            <p>„Najlepszy barber w mieście. Michał zawsze wie dokładnie, czego potrzebuję,
-            zanim sam to powiem. Atmosfera jak w prywatnym klubie.”</p>
-            <footer><span class="stars">★★★★★</span> Piotr Malinowski</footer>
-          </blockquote>
-          <blockquote class="testi-card">
-            <p>„Rytuał SFM to zupełnie inny poziom. Golenie brzytwą i masaż twarzy —
-            wychodzę stamtąd jak nowo narodzony.”</p>
-            <footer><span class="stars">★★★★★</span> Krzysztof Zawadzki</footer>
-          </blockquote>
-          <blockquote class="testi-card">
-            <p>„Dbałość o detal widać na każdym kroku — od powitania po ostatnie muśnięcie
-            grzebieniem. Polecam każdemu, kto ceni jakość.”</p>
-            <footer><span class="stars">★★★★★</span> Marcin Osiński</footer>
-          </blockquote>
-          <blockquote class="testi-card">
-            <p>„Chodzę tu od trzech lat i nigdy się nie zawiodłem. Konsekwentna jakość
-            i profesjonalne podejście do klienta.”</p>
-            <footer><span class="stars">★★★★★</span> Bartosz Lis</footer>
-          </blockquote>
+        <div class="testi-nav reveal-up">
+          <button class="testi-arrow" id="testiPrev" aria-label="Poprzednia opinia">‹</button>
+          <span class="testi-index"><span id="testiCurrent">01</span> / <span id="testiTotal">04</span></span>
+          <button class="testi-arrow" id="testiNext" aria-label="Następna opinia">›</button>
         </div>
-        <div class="testi-controls">
-          <button id="testiPrev" aria-label="Poprzednia opinia">←</button>
-          <button id="testiNext" aria-label="Następna opinia">→</button>
+      </div>
+
+      <div class="testi-body">
+        <span class="testi-mark" aria-hidden="true">”</span>
+        <div class="testi-track" id="testiTrack">
+          <figure class="testi-slide">
+            <blockquote><p>Najlepszy barber w mieście. Michał zawsze wie dokładnie, czego
+            potrzebuję, zanim sam to powiem. Atmosfera jak w prywatnym klubie.</p></blockquote>
+            <figcaption>
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="" loading="lazy">
+              <span><strong>Piotr Malinowski</strong><em>Klient od 2019</em></span>
+            </figcaption>
+          </figure>
+          <figure class="testi-slide">
+            <blockquote><p>Rytuał SFM to zupełnie inny poziom. Golenie brzytwą i masaż twarzy —
+            wychodzę stamtąd jak nowo narodzony.</p></blockquote>
+            <figcaption>
+              <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=200&auto=format&fit=crop" alt="" loading="lazy">
+              <span><strong>Krzysztof Zawadzki</strong><em>Klient od 2021</em></span>
+            </figcaption>
+          </figure>
+          <figure class="testi-slide">
+            <blockquote><p>Dbałość o detal widać na każdym kroku — od powitania po ostatnie
+            muśnięcie grzebieniem. Polecam każdemu, kto ceni jakość.</p></blockquote>
+            <figcaption>
+              <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=200&auto=format&fit=crop" alt="" loading="lazy">
+              <span><strong>Marcin Osiński</strong><em>Klient od 2020</em></span>
+            </figcaption>
+          </figure>
+          <figure class="testi-slide">
+            <blockquote><p>Chodzę tu od trzech lat i nigdy się nie zawiodłem. Konsekwentna
+            jakość i profesjonalne podejście do klienta.</p></blockquote>
+            <figcaption>
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop" alt="" loading="lazy">
+              <span><strong>Bartosz Lis</strong><em>Klient od 2018</em></span>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </div>
   </section>
 
   <!-- KONTAKT / REZERWACJA -->
-  <section class="section contact" id="kontakt">
+  <section class="section section-a contact" id="kontakt">
     <div class="container contact-grid">
       <div class="contact-info">
         <p class="eyebrow reveal-up">Odwiedź nas</p>
