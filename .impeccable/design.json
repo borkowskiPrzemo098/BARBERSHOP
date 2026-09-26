@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-26T12:00:00Z",
+  "title": "Design System: SFM — Salon Fryzur Męskich",
+  "extensions": {
+    "colorMeta": {
+      "gold":       { "role": "primary", "displayName": "Sign Gold", "canonical": "#d4ad5c", "tonalRamp": ["#2e2210", "#4a3818", "#6b5022", "#8c6a2e", "#b08a42", "#d4ad5c", "#e6cc8c", "#f6e9c6"] },
+      "gold-hi":    { "role": "primary", "displayName": "Gold Leaf Highlight", "canonical": "#f6e1a1", "tonalRamp": ["#302812", "#4f421e", "#72602c", "#9a833e", "#c4a95a", "#e3c97e", "#f6e1a1", "#fcf4d9"] },
+      "gold-lo":    { "role": "primary", "displayName": "Tarnished Brass", "canonical": "#8c6526", "tonalRamp": ["#20160a", "#3a2912", "#5a401b", "#8c6526", "#a97f3a", "#c49c5a", "#dcbe88", "#f1e2c5"] },
+      "gold-deep":  { "role": "primary", "displayName": "Engraved Gold", "canonical": "#83601c", "tonalRamp": ["#1f1606", "#38280c", "#573e13", "#83601c", "#a47c30", "#c29c52", "#dbbf85", "#f0e1c2"] },
+      "lacquer":    { "role": "neutral", "displayName": "Black Lacquer", "canonical": "#0b0a09", "tonalRamp": ["#0b0a09", "#16130f", "#211c16", "#3a332a", "#5c5346", "#857a69", "#b3a994", "#e2dac8"] },
+      "marble":     { "role": "neutral", "displayName": "Ivory Marble", "canonical": "#f1ebdd", "tonalRamp": ["#2a2620", "#4a443a", "#6f6858", "#958c79", "#bab09b", "#d8ceb8", "#e6ddca", "#f1ebdd"] },
+      "ink":        { "role": "neutral", "displayName": "Lamp Ink", "canonical": "#16120c" },
+      "ink-soft":   { "role": "neutral", "displayName": "Worn Ink", "canonical": "#4d4538" },
+      "ivory":      { "role": "neutral", "displayName": "Ivory", "canonical": "#f4eee1" },
+      "ivory-soft": { "role": "neutral", "displayName": "Smoked Ivory", "canonical": "#c9c0ae" }
+    },
+    "typographyMeta": {
+      "display":  { "displayName": "Wordmark", "purpose": "The SFM wordmark only; flat Sign Gold with the hard shadow-line." },
+      "headline": { "displayName": "Headline", "purpose": "Section headlines in uppercase display caps; one emphasised phrase in gold." },
+      "title":    { "displayName": "Title", "purpose": "Service names, barber names, rite step names." },
+      "price":    { "displayName": "Price Numerals", "purpose": "Prices on the brass plaque; currency at 0.45em." },
+      "body":     { "displayName": "Body", "purpose": "All running sentences, Jost only." },
+      "label":    { "displayName": "Label", "purpose": "Definition terms, footer column heads, barber roles; tracked gold caps." },
+      "button":   { "displayName": "Button", "purpose": "Button labels in display caps." }
+    },
+    "shadows": [
+      { "name": "object-drop", "value": "0 40px 80px -20px rgba(0,0,0,.8)", "purpose": "Heavy framed objects: the hero arch photo; plaque uses 0 40px 90px -30px." },
+      { "name": "plate-drop", "value": "0 20px 40px -12px rgba(0,0,0,.5), inset 0 0 0 1px #8c6526", "purpose": "Small lacquer plates laid over imagery." },
+      { "name": "header-scrolled", "value": "0 14px 30px rgba(0,0,0,.45)", "purpose": "Header after scrolling past 60px." },
+      { "name": "shadow-line", "value": "text-shadow: .035em .035em 0 #0b0a09, .06em .06em 0 #8c6526", "purpose": "Deco shadow-line lettering on the wordmark only." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(.2,.8,.2,1)", "purpose": "Single easing for every transition and animation." },
+      { "name": "hover", "value": ".25s", "purpose": "Button lift, color and filter changes." },
+      { "name": "rays-open", "value": "2.2s, delay .15s, once", "purpose": "Hero sunburst mask grows from 0% to 58% on load." },
+      { "name": "shadow-line-in", "value": "1.6s, delay .35s, once", "purpose": "Wordmark shadow-line slides out from behind the letters on load." },
+      { "name": "reduced-motion", "value": "animations off, transitions .01ms", "purpose": "prefers-reduced-motion disables all motion." }
+    ],
+    "breakpoints": [
+      { "name": "narrow", "value": "380px" },
+      { "name": "phone", "value": "640px" },
+      { "name": "tablet", "value": "1040px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Gold stepped-corner tablet; every Booksy booking CTA.",
+      "html": "<a class=\"ds-btn ds-btn-gold\" href=\"#\">Zarezerwuj w Booksy</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.08em;text-transform:uppercase;padding:15px 28px;min-height:52px;border:0;text-decoration:none;cursor:pointer;transition:transform .25s cubic-bezier(.2,.8,.2,1),filter .25s cubic-bezier(.2,.8,.2,1),background-color .25s,color .25s;clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px),0 8px)} .ds-btn-gold{background:#d4ad5c;color:#0b0a09} .ds-btn-gold:hover{filter:brightness(1.1) saturate(1.1);transform:translateY(-2px)} .ds-btn-gold:active{transform:translateY(1px) scale(.98)} .ds-btn-gold:focus-visible{outline:2px solid #d4ad5c;outline-offset:3px}"
+    },
+    {
+      "name": "Dark Button",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "Lacquer tablet with gold-leaf label, used on gold and brass grounds.",
+      "html": "<div style=\"background:#d4ad5c;padding:24px\"><a class=\"ds-btn-black\" href=\"#\">Umów wizytę w Booksy</a></div>",
+      "css": ".ds-btn-black{display:inline-flex;align-items:center;font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.08em;text-transform:uppercase;padding:15px 28px;min-height:52px;text-decoration:none;background:#0b0a09;color:#f6e1a1;transition:transform .25s cubic-bezier(.2,.8,.2,1),background-color .25s;clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 8px,100% calc(100% - 8px),calc(100% - 8px) 100%,8px 100%,0 calc(100% - 8px),0 8px)} .ds-btn-black:hover{background:#211c16;transform:translateY(-2px)} .ds-btn-black:focus-visible{outline:2px solid #0b0a09;outline-offset:3px}"
+    },
+    {
+      "name": "Line Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action on lacquer: ivory hairline that turns gold on hover.",
+      "html": "<div style=\"background:#0b0a09;padding:24px\"><a class=\"ds-btn-line\" href=\"#\">Zobacz cennik</a></div>",
+      "css": ".ds-btn-line{display:inline-flex;align-items:center;font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:800;font-size:1.05rem;letter-spacing:.08em;text-transform:uppercase;padding:15px 28px;min-height:52px;text-decoration:none;border:1.5px solid rgba(244,238,225,.6);color:#f4eee1;transition:border-color .25s,color .25s} .ds-btn-line:hover{border-color:#d4ad5c;color:#f6e1a1} .ds-btn-line:focus-visible{outline:2px solid #d4ad5c;outline-offset:3px}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Always-solid lacquer bar with brass double rule, wordmark, caps links and gold CTA.",
+      "html": "<header class=\"ds-bar\"><a class=\"ds-mark\" href=\"#\"><span class=\"ds-dia\"></span>SFM</a><nav class=\"ds-nav\"><a href=\"#\">O nas</a><a href=\"#\">Cennik</a><a href=\"#\">Zespół</a></nav></header>",
+      "css": ".ds-bar{display:flex;align-items:center;gap:28px;height:72px;padding:0 32px;background:#0b0a09;border-bottom:1px solid #8c6526;position:relative} .ds-bar::after{content:'';position:absolute;left:0;right:0;bottom:-5px;height:1px;background:rgba(140,101,38,.55)} .ds-mark{display:flex;align-items:center;gap:12px;margin-right:auto;font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:900;font-size:1.9rem;letter-spacing:.14em;color:#d4ad5c;text-decoration:none} .ds-dia{width:14px;height:14px;transform:rotate(45deg);background:#d4ad5c} .ds-nav{display:flex;gap:4px} .ds-nav a{position:relative;font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:1rem;color:#f4eee1;padding:10px 14px;text-decoration:none;transition:color .2s} .ds-nav a::after{content:'';position:absolute;left:14px;right:14px;bottom:4px;height:2px;background:#d4ad5c;transform:scaleX(0);transition:transform .3s cubic-bezier(.2,.8,.2,1)} .ds-nav a:hover{color:#f6e1a1} .ds-nav a:hover::after{transform:scaleX(1)} .ds-nav a:focus-visible{outline:2px solid #d4ad5c;outline-offset:3px}"
+    },
+    {
+      "name": "Review Card",
+      "kind": "card",
+      "refersTo": "review-card",
+      "description": "Bordered lacquer testimonial card with inset rule and clip-path stars; sits in a grid.",
+      "html": "<figure class=\"ds-card\"><div class=\"ds-stars\"><i></i><i></i><i></i><i></i><i></i></div><blockquote>Najlepszy barber w mieście. Atmosfera jak w prywatnym klubie.</blockquote><figcaption><b>Piotr Malinowski</b>Klient od 2019</figcaption></figure>",
+      "css": ".ds-card{margin:0;max-width:380px;background:#0b0a09;color:#f4eee1;padding:44px 36px 36px;position:relative;border:1.5px solid #d4ad5c;font-family:Jost,Futura,sans-serif} .ds-card::after{content:'';position:absolute;inset:7px;border:1px solid #8c6526;pointer-events:none} .ds-stars{display:flex;gap:5px} .ds-stars i{width:17px;height:17px;background:#d4ad5c;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)} .ds-card blockquote{margin:22px 0 0;font-size:1.08rem;line-height:1.6} .ds-card figcaption{margin-top:26px;padding-top:18px;border-top:1px solid rgba(140,101,38,.6);color:#c9c0ae;font-size:.9rem} .ds-card figcaption b{display:block;font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:1.2rem;color:#f6e1a1}"
+    },
+    {
+      "name": "Brass Price Plaque",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Translucent brass panel with double inner rules, dot-leader rows and an inverted featured row.",
+      "html": "<div class=\"ds-plaque\"><ul><li><div><h3>Strzyżenie klasyczne</h3><p>Konsultacja, mycie, stylizacja</p></div><span class=\"ds-dots\"></span><b>120<small>zł</small></b></li><li class=\"ds-star\"><div><h3>Rytuał SFM</h3><p>Strzyżenie, broda, brzytwa · 90 min</p></div><span class=\"ds-dots\"></span><b>280<small>zł</small></b></li></ul></div>",
+      "css": ".ds-plaque{position:relative;max-width:640px;background:rgba(205,166,88,.95);color:#16120c;padding:36px;border:1.5px solid #d4ad5c;font-family:Jost,Futura,sans-serif} .ds-plaque::after{content:'';position:absolute;inset:8px;border:1px solid rgba(22,18,12,.6);pointer-events:none} .ds-plaque ul{list-style:none;margin:0;padding:0} .ds-plaque li{display:grid;grid-template-columns:auto 1fr auto;align-items:baseline;gap:16px;padding:20px 8px;border-bottom:1px solid rgba(22,18,12,.28)} .ds-plaque li:last-child{border-bottom:0} .ds-plaque h3{margin:0;font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:1.6rem;line-height:1.05} .ds-plaque p{margin:4px 0 0;font-size:.95rem;color:#3b2c12} .ds-dots{border-bottom:2px dotted rgba(22,18,12,.45);transform:translateY(-6px)} .ds-plaque b{font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:900;font-size:2.4rem;line-height:1} .ds-plaque b small{font-size:.45em;font-weight:700;margin-left:4px} .ds-star{background:#0b0a09;color:#f4eee1;margin:10px -8px;padding:24px 22px!important;clip-path:polygon(10px 0,calc(100% - 10px) 0,100% 10px,100% calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,0 calc(100% - 10px),0 10px)} .ds-star p{color:#c9c0ae} .ds-star b{color:#d4ad5c} .ds-star .ds-dots{border-color:rgba(212,173,92,.55)}"
+    },
+    {
+      "name": "Octagon Medallion",
+      "kind": "custom",
+      "refersTo": "medallion",
+      "description": "Gold octagon with Roman numeral; marker for numbered lists.",
+      "html": "<span class=\"ds-octa\">II</span>",
+      "css": ".ds-octa{width:58px;height:58px;display:grid;place-items:center;background:#d4ad5c;color:#0b0a09;font-family:'Big Shoulders Display','Arial Narrow',sans-serif;font-weight:900;font-size:1.35rem;letter-spacing:.04em;clip-path:polygon(30% 0,70% 0,100% 30%,100% 70%,70% 100%,30% 100%,0 70%,0 30%)}"
+    },
+    {
+      "name": "Sunburst Fan",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Half-disc of flat gold rays with a hollow hub, set above centred section heads.",
+      "html": "<div style=\"background:#0b0a09;padding:24px\"><span class=\"ds-fan\"></span></div>",
+      "css": ".ds-fan{display:block;width:92px;height:46px;border-radius:92px 92px 0 0;background:repeating-conic-gradient(from -90deg at 50% 100%,#d4ad5c 0deg 3deg,transparent 3deg 12deg);-webkit-mask:radial-gradient(circle at 50% 100%,transparent 0 10px,#000 11px);mask:radial-gradient(circle at 50% 100%,transparent 0 10px,#000 11px)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Grand Hotel Barber",
+    "overview": "SFM is set in an interwar Warsaw grand hotel: black lacquer panels, ivory marble floors, and brass lettering set by a sign-maker. The page is a run of full-bleed bands that alternate hard between lacquer and marble. Gold is not a highlight colour. It is the metal the room is built from: flat letters, double rules, stepped corners, sunburst fans, octagon medallions, and one brass price plaque.\n\nThe display face does the heavy lifting. Condensed Big Shoulders Display caps run huge and tight, and the wordmark carries a shadow-line (a flat gold face, a lacquer gap, then a second darker gold line). Jost, a Futura-era geometric sans, handles everything people read. Density is low and confident: big sections, few elements per band, every ornament drawn in the same gold vocabulary.\n\nThe build rejects the category default of a dark photo with a thin gold serif and a centred button. It also rejects metallic gradient text, pastel or secondary accent hues, and content that fades in on scroll.",
+    "keyCharacteristics": [
+      "Lacquer and marble bands alternate hard, joined by a gold double-rule seam with a gold diamond at centre.",
+      "Gold is the only accent family, used as flat ink and flat fields and never as a sheen.",
+      "Condensed display caps at poster scale, with Jost for reading.",
+      "Deco geometry throughout: stepped (notched) corners, top-rounded arches, sunburst fans, octagons, diamonds.",
+      "Everything is visible on load. Motion is limited to a one-time hero flourish and hover states."
+    ],
+    "rules": [
+      { "name": "The One Metal Rule", "body": "Gold is the only accent family. No burgundy, no green, no blue, no second accent hue. New states and emphasis come from the four golds or from the lacquer/marble grounds.", "section": "colors" },
+      { "name": "The Right Gold Rule", "body": "Use Sign Gold on lacquer and Engraved Gold on marble. Sign Gold text on marble fails contrast, and Tarnished Brass is only for rules.", "section": "colors" },
+      { "name": "The Hard Alternation Rule", "body": "Adjacent sections switch ground: lacquer, marble, lacquer. Never place two marble bands together, and never use a mid-grey or tinted third ground to soften the change.", "section": "colors" },
+      { "name": "The Signage Rule", "body": "Every heading, label, button, and number is Big Shoulders caps. Jost is for sentences only. Do not set headings in Jost or paragraphs in Big Shoulders.", "section": "typography" },
+      { "name": "The Flat Ink Rule", "body": "Gold type is a flat colour. No background-clip gradient text, no metallic sheen, no glow. The only dimensional letter treatment is the wordmark's hard shadow-line: .035em of lacquer offset, then .06em of Tarnished Brass.", "section": "typography" },
+      { "name": "The Seam Rule", "body": "Every section boundary gets the deco seam: a 7px gold double rule (1px Tarnished Brass top and bottom) with an 18px Sign Gold diamond on the centre line, ringed in the colour of the section it sits in.", "section": "layout" },
+      { "name": "The Nested Rule Rule", "body": "To show that something is a framed object, add an inset hairline 7–10px inside its edge. Cards, plaque, mosaic tiles, and the header all do this. Frame with gold lines before reaching for a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do alternate lacquer (#0b0a09) and marble (#f1ebdd) bands and mark every boundary with the gold double-rule seam and diamond.",
+      "Do keep gold as the only accent: Sign Gold (#d4ad5c) on lacquer, Engraved Gold (#83601c) on marble, Tarnished Brass (#8c6526) for rules only.",
+      "Do send every booking action to Booksy as a gold (or dark-on-gold) stepped-corner link button.",
+      "Do present testimonials as bordered lacquer cards in a grid, with gold outer border and inner inset rule.",
+      "Do keep the header solid lacquer and visible at all times, including over the hero.",
+      "Do draw ornaments in CSS geometry (fans, octagons, diamonds, arches, stepped corners) in flat gold.",
+      "Do tone photography toward the room (partial grayscale + sepia) and treat all current photos as placeholders for the salon's own."
+    ],
+    "donts": [
+      "Don't introduce burgundy, green, blue, or any second accent hue.",
+      "Don't render gold with gradient text, background-clip sheen, or metallic glow. Gold is flat ink and flat fields.",
+      "Don't use a booking form. Booking is always a Booksy link CTA, with phone as the fallback.",
+      "Don't fade content in on scroll or hide it behind opacity reveals. All content is visible on load. Motion is limited to the one-time hero ray and shadow-line flourish and to hover states.",
+      "Don't let the header go transparent or blend into the hero.",
+      "Don't set two same-ground sections adjacent, or soften the alternation with a grey or tinted third ground.",
+      "Don't round corners. Anything that isn't square is either a stepped notch or an arch.",
+      "Don't use icon fonts or glyph icons for ornaments or ratings.",
+      "Don't set gold text on marble in Sign Gold. Use Engraved Gold."
+    ]
+  }
+}

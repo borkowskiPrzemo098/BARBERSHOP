@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "layout-transition",
+        "value": "transition: width",
+        "files": [
+          "styles.css"
+        ],
+        "createdAt": "2026-09-02T21:08:30.341Z",
+        "reason": "Same intentional scroll-progress bar as the existing BARBERSHOP/styles.css ignore — re-added scoped to the relative path 'styles.css' seen when cwd is already BARBERSHOP/"
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "styles.css"
+        ],
+        "createdAt": "2026-09-26T17:27:05.623Z",
+        "reason": "User chose the Warsaw Art Deco direction described as 'złocone mosiężne litery' (gilded brass letters); the gold gradient is the letterform's metal material, not decoration"
+      }
+    ]
+  }
+}
