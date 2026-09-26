@@ -20,6 +20,33 @@
         ],
         "createdAt": "2026-09-26T17:27:05.623Z",
         "reason": "User chose the Warsaw Art Deco direction described as 'złocone mosiężne litery' (gilded brass letters); the gold gradient is the letterform's metal material, not decoration"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "*",
+        "files": [
+          "styles.css"
+        ],
+        "createdAt": "2026-09-26T17:43:57.850Z",
+        "reason": "user confirmed: styles.css is the source DESIGN.md was derived from; DESIGN.md intentionally omits one-off values"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "*",
+        "files": [
+          "styles.css"
+        ],
+        "createdAt": "2026-09-26T17:43:57.944Z",
+        "reason": "user confirmed: styles.css is the source DESIGN.md was derived from; DESIGN.md intentionally omits one-off values"
+      },
+      {
+        "rule": "design-system-radius",
+        "value": "*",
+        "files": [
+          "styles.css"
+        ],
+        "createdAt": "2026-09-26T17:43:58.052Z",
+        "reason": "user confirmed: styles.css is the source DESIGN.md was derived from; DESIGN.md intentionally omits one-off values"
       }
     ]
   }
